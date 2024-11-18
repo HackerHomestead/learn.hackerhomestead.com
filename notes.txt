@@ -1,0 +1,3 @@
+
+# Pushing things to object strage
+gsutil cp ./basic.html gs://learn.hackerhomestead.com/basic59.html
