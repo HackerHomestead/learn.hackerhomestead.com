@@ -50,29 +50,19 @@ window.onload = function()
 
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
-	document.getElementById("go_fullscreen").onclick = async function()
-		{
+	document.getElementById("go_fullscreen").onclick = async function(){
 			emulator.screen_go_fullscreen();
-			
 			//emulator.screen_set_scale(1,1);
-
-		}
+	}
 
 	// We are going to see if we can add the reset CPU call/button
-
-	document.getElementById("ResetCPU").onclick = async function()
-		{
+	document.getElementById("ResetCPU").onclick = async function(){
 			emulator.restart();
+	}
 
-		}
-
-  function resetCPU(){
-    emulator.restart();
-  }
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
-	document.getElementById("save_file").onclick = async function()
-	    {
+	document.getElementById("save_file").onclick = async function(){
 		const new_state = await emulator.save_state();
 		var a = document.createElement("a");
 		a.download = "v86state.bin";
@@ -81,7 +71,7 @@ window.onload = function()
 		a.click();
 
 		this.blur();
-	    };
+	};
 
 	    document.getElementById("restore_file").onchange = function()
 	    {
@@ -129,3 +119,7 @@ window.onload = function()
 //////////////////////////////////////////////////
 };
 
+function rCPU(){
+  	emulator.restart();
+	console.log("Reset CPU Requested\n");
+}
