@@ -22,6 +22,7 @@ window.onload = function()
 	// Define state, this is the object where we hold state
 	//  Idea: Could I have these in an array, so that I can have mulitable online-save states?
     	var state;
+	var state_array = [];
 	document.getElementById("saveMemory").onclick = async function()
 	    {
 		var button = this;
@@ -38,15 +39,13 @@ window.onload = function()
 		else
 		{
 		    const new_state = await emulator.save_state();
-		    
-		    console.log("Saved state of " + new_state.byteLength + " bytes");
+		    state_array.push(new_state);
+		    console.log("Saved state of " + new_state.byteLength + " bytes;" + "State Array: " + state_array.length);
         	    //document.getElementById("log").value += "Saved state of " + new_state.byteLength + " bytes\n";
-		    
 	   	    button.value = "Restore state";
 		    button.textContent = "Restore State";
 		    state = new_state;
 		}
-
 		button.blur();
 	    };
 //////////////////////////////////////////////////
