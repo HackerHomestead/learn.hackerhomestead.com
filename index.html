@@ -19,7 +19,7 @@
   </head>
   <body class="flex bg-gray-700">
 <!-- DESKTOP -->
-    <div class="grid grid-flow-col grid-cols-1 grid-rows-3 gap-0">	
+    <div class="grid grid-flow-col grid-cols-2 grid-rows-5 gap-0">	
 	    <button 
 		    type="button" 
 		    onclick="openWindow();" 
@@ -29,8 +29,8 @@
 	     Virtual Machine 
 	    </button>
 
-	     <button 
-	      id="ResetCPU" type="button" value="Reset" onclick="rCPU();"
+	    <button 
+	      id="ResetCPU" type="button" value="Reset" onclick="resetCPU();"
 	      class="
 	      	m-6
 		bg-red-700
@@ -39,7 +39,18 @@
 		border-solid 
 		border py-3 px-5 hover:bg-white hover:text-black transition-colors">
 			Reset
-	      </button>
+	    </button>
+	    <button 
+	      id="saveMemory" type="button" value="saveMemory" onclick="saveMemory();"
+	      class="
+	      	m-6
+		bg-red-700
+		text-white 
+		border-white 
+		border-solid 
+		border py-3 px-5 hover:bg-white hover:text-black transition-colors">
+			Save Memory
+	    </button>
     </div>
 
  <!-- END DESKTOP -->
